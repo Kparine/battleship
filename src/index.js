@@ -1,12 +1,3 @@
-/** Main Board
- *
- * Fire Method Considerations:
- *  1. Check Coordinate
- * 	2. Is coordinate === 'x', if (yes), then 'MISS', else 'HIT'
- * 	3. Check board for remaining Ship type (s1, etc.), if (no), then 'SANK', else false
- *
- */
-
 const playerOneBoard = [
 	["x", "x", "x", "x", "dingy", "x", "x", "x", "x", "x"],
 	["x", "x", "x", "x", "x", "x", "x", "x", "x", "destroyer"],
@@ -27,22 +18,22 @@ const GameBoard = {
 						return GameBoard.sunk(ship);
 					}
 					/** MISS */
-					return console.log("\x1b[34m", "You've Missed");
+					return "oops, you missed";
 				}
 			}
 		}
 	},
 	sunk: (ship) => {
+		console.log(ship);
 		for (let i = 0; i < playerOneBoard.length; i++) {
 			for (let j = 0; j < playerOneBoard[i].length; j++) {
 				if (playerOneBoard[i][j] === ship) {
-					return console.log("\x1b[33m", "You Hit My", ship);
+					return `You Hit My ${ship}`;
 				}
 			}
 		}
-		return console.log("\x1b[31m", "You Sunk My", ship);
+		return `You Sunk My ${ship}`;
 	},
 };
 
-GameBoard.fire(0, 4);
 export default GameBoard;
