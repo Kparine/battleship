@@ -12,20 +12,22 @@ npm install
 
 ## Run Tests
 
-    * Tests will run through each scenario, i.e. miss, hit, etc...
+- Tests will run through each scenario, i.e. miss, hit, etc.
 
 ```
 npm run test
 ```
 
+
 #### Additional Time:
 
-    * Considerations I would have made with additional time, include:
-    	* Verify fire() inputs, coordinates are within matrix, coordinates are not duplicate "shots", etc.
-    	* Split board and ships into separate respective classes
-    	* Board class would have exposed methods, i.e. "fire","hit", etc.
-    		* Build board, testing valid placement of ships, i.e. not overlapping or off board.
-    	* Ship class would have tracked their respective statuses, i.e. location, hits, sank, etc.
+- Considerations I would have made with additional time, include:
+	- Verify fire() inputs, coordinates are within matrix, coordinates are not duplicate "shots", etc.
+	- Split board and ships into separate respective classes
+	- Board class would have exposed methods, i.e. "fire","hit", etc.
+		- Build board, testing valid placement of ships, i.e. not overlapping or off board.
+	- Ship class would have tracked their respective statuses, i.e. location, hits, sank, etc.
+
 
 ```
 /** Example Ship Class **/
