@@ -8,6 +8,10 @@ const playerOneBoard = [
 
 const GameBoard = {
 	fire: (x, y) => {
+		if (!x || !y || (typeof x && y !== "string")) {
+			return "please enter valid coordinates";
+		}
+
 		for (let row = 0; row < playerOneBoard.length; row++) {
 			for (let col = 0; col < playerOneBoard[row].length; col++) {
 				if (row === x && col === y) {
