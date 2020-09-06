@@ -59,8 +59,9 @@ const GameBoard = () => {
 	const fire = (x, y) => {
 	[loop through matrix...]
 		if (x === row && y === col){
-			Ship.hit()
+			return Ship.hit()
 		}
+		return 'miss'
 	}
 }
 ```
