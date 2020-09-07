@@ -1,19 +1,29 @@
-const playerOneBoard = [
-	["x", "x", "x", "x", "dingy", "x", "x", "x", "x", "x"],
-	["x", "x", "x", "x", "x", "x", "x", "x", "x", "destroyer"],
-	["x", "x", "cruiser", "cruiser", "cruiser", "x", "x", "x", "x", "destroyer"],
-	["x", "x", "x", "x", "x", "x", "x", "x", "x", "destroyer"],
-	["x", "x", "x", "x", "x", "x", "x", "x", "x", "destroyer"],
-];
+const { playerOneBoard } = require("./board.json");
 
 const GameBoard = {
 	fire: (x, y) => {
-		if (!x || !y || (typeof x && y !== "string")) {
+		/** validate GameBoard.fire inputs (x,y) */
+		if (
+			typeof x == "undefined" ||
+			typeof y == "undefined" ||
+			typeof x !== "number" ||
+			typeof y !== "number"
+		) {
 			return "please enter valid coordinates";
 		}
 
 		for (let row = 0; row < playerOneBoard.length; row++) {
 			for (let col = 0; col < playerOneBoard[row].length; col++) {
+				/** validate that shot landed within board boundaries *****/
+				if (
+					y < 0 ||
+					x < 0 ||
+					y > playerOneBoard[row].length - 1 ||
+					x > playerOneBoard.length - 1
+				) {
+					return "shot fell outside board boundaries";
+				}
+
 				if (row === x && col === y) {
 					if (playerOneBoard[row][col] !== "x") {
 						/** HIT */
@@ -28,7 +38,6 @@ const GameBoard = {
 		}
 	},
 	sunk: (ship) => {
-		console.log(ship);
 		for (let i = 0; i < playerOneBoard.length; i++) {
 			for (let j = 0; j < playerOneBoard[i].length; j++) {
 				if (playerOneBoard[i][j] === ship) {

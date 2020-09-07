@@ -1,6 +1,6 @@
 # battleShip
 
-### Welcome to battleShip, let's play!
+### Welcome to battleShip (beta branch), let's play!
 
 ## To Install
 
