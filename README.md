@@ -2,6 +2,8 @@
 
 ### Welcome to battleShip, let's play!
 
+#### Do please consider beta branch, as it contains some additional work outside the alloted time restraint.
+
 ## To Install
 
 - Fork or clone from GitHub
@@ -18,16 +20,14 @@ npm install
 npm run test
 ```
 
-
 #### Additional Time:
 
 - Considerations I would have made with additional time, include:
-	- Verify fire() inputs, coordinates are within matrix, coordinates are not duplicate "shots", etc.
-	- Split board and ships into separate respective classes
-	- Board class would have exposed methods, i.e. "fire","hit", etc.
-		- Build board, testing valid placement of ships, i.e. not overlapping or off board.
-	- Ship class would have tracked their respective statuses, i.e. location, hits, sank, etc.
-
+  - Verify fire() inputs, coordinates are within matrix, coordinates are not duplicate "shots", etc.
+  - Split board and ships into separate respective classes
+  - Board class would have exposed methods, i.e. "fire","hit", etc.
+    - Build board, testing valid placement of ships, i.e. not overlapping or off board.
+  - Ship class would have tracked their respective statuses, i.e. location, hits, sank, etc.
 
 ```
 /** Example Ship Class **/

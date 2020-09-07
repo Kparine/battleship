@@ -1,10 +1,4 @@
-const playerOneBoard = [
-	["x", "x", "x", "x", "dingy", "x", "x", "x", "x", "x"],
-	["x", "x", "x", "x", "x", "x", "x", "x", "x", "destroyer"],
-	["x", "x", "cruiser", "cruiser", "cruiser", "x", "x", "x", "x", "destroyer"],
-	["x", "x", "x", "x", "x", "x", "x", "x", "x", "destroyer"],
-	["x", "x", "x", "x", "x", "x", "x", "x", "x", "destroyer"],
-];
+const { playerOneBoard } = require("./board.json");
 
 const GameBoard = {
 	fire: (x, y) => {
@@ -24,7 +18,6 @@ const GameBoard = {
 		}
 	},
 	sunk: (ship) => {
-		console.log(ship);
 		for (let i = 0; i < playerOneBoard.length; i++) {
 			for (let j = 0; j < playerOneBoard[i].length; j++) {
 				if (playerOneBoard[i][j] === ship) {

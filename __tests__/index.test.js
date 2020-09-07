@@ -1,4 +1,5 @@
 import GameBoard from "../src/index";
+const spy = jest.spyOn(GameBoard, "sunk");
 
 describe("GameBoard", () => {
 	it("should have a fire method", () => {
@@ -9,6 +10,10 @@ describe("GameBoard", () => {
 	});
 
 	describe("fire", () => {
+		it("should not call sunk on invalid coordinates", () => {
+			GameBoard.fire();
+			expect(spy).not.toHaveBeenCalled();
+		});
 		it("should call return string on miss", () => {
 			const result = GameBoard.fire(0, 2);
 			expect(typeof result).toBe("string");
