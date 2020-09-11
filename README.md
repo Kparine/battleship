@@ -1,10 +1,9 @@
 # battleShip
 
-### Welcome to battleShip (beta branch), let's play!
+### Welcome to battleShip (charlie branch), let's play!
 
-- This branch (beta), includes several changes not found on master. Including:
-	- Updated validation of fire method inputs
-	- Updated testing suite
+- This branch (charlie), includes several changes not found on master or beta. Including:
+	- Alternative OOP approach to problem, still in development (09/11)
 
 ## To Install
 
@@ -28,7 +27,7 @@ npm run test
 - Verify fire() inputs, coordinates are within matrix, coordinates are not duplicate "shots", etc.
 - Split board and ships into separate respective classes
 - Board class would have exposed methods, i.e. "fire","hit", etc.
-	- Build board, testing valid placement of ships, i.e. not overlapping or off board.
+  - Build board, testing valid placement of ships, i.e. not overlapping or off board.
 - Ship class would have tracked their respective statuses, i.e. location, hits, sank, etc.
 
 ```

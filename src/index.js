@@ -1,8 +1,12 @@
 const { playerOneBoard } = require("./board.json");
+// import Ship from "./ship";
+const { Ship } = require("./ship");
 
 const GameBoard = {
 	fire: (x, y) => {
 		/** validate GameBoard.fire inputs (x,y) */
+		console.log("Ship ******------>>>>>>", Ship("patrol"));
+
 		if (
 			typeof x == "undefined" ||
 			typeof y == "undefined" ||
@@ -49,4 +53,6 @@ const GameBoard = {
 	},
 };
 
-export default GameBoard;
+// export default GameBoard;
+const result = GameBoard.fire(2, 3);
+console.log("result ******------>>>>>>", result);
