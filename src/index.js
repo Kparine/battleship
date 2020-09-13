@@ -1,11 +1,9 @@
 const { playerOneBoard } = require("./board.json");
-// import Ship from "./ship";
 const { Ship } = require("./ship");
 
 const GameBoard = {
 	fire: (x, y) => {
 		/** validate GameBoard.fire inputs (x,y) */
-		console.log("Ship ******------>>>>>>", Ship("patrol"));
 
 		if (
 			typeof x == "undefined" ||
@@ -33,7 +31,12 @@ const GameBoard = {
 						/** HIT */
 						const ship = playerOneBoard[row][col];
 						playerOneBoard[row][col] = "hit";
-						return GameBoard.sunk(ship);
+						Ship(ship).hit();
+						/** SUNK */
+						if (Ship(ship).sunk()) {
+							return `You sank my ${ship}`;
+						}
+						return `You hit my ${ship}`;
 					}
 					/** MISS */
 					return "oops, you missed";
@@ -41,18 +44,8 @@ const GameBoard = {
 			}
 		}
 	},
-	sunk: (ship) => {
-		for (let i = 0; i < playerOneBoard.length; i++) {
-			for (let j = 0; j < playerOneBoard[i].length; j++) {
-				if (playerOneBoard[i][j] === ship) {
-					return `You Hit My ${ship}`;
-				}
-			}
-		}
-		return `You Sunk My ${ship}`;
-	},
 };
 
 // export default GameBoard;
-const result = GameBoard.fire(2, 3);
+const result = GameBoard.fire(0, 4);
 console.log("result ******------>>>>>>", result);

@@ -1,5 +1,5 @@
 let battleGroup = {
-	patrol: { size: 2 },
+	dingy: { size: 1 },
 	cruiser: { size: 3 },
 	frigate: { size: 4 },
 	submarine: { size: 4 },
