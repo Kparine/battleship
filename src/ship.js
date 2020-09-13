@@ -1,15 +1,14 @@
 const { battleGroup } = require("./battleGroup");
 
 const Ship = (name) => {
-	const { size } = battleGroup[name];
-	let hits = 0;
+	const { size, hits } = battleGroup[name];
 
 	const hit = () => {
-		hits++;
+		return battleGroup[name].hits++;
 	};
 
 	const sunk = () => {
-		hits === size;
+		return hits === size;
 	};
 
 	return { name, size, hit, sunk };

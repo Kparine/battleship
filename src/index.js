@@ -4,7 +4,6 @@ const { Ship } = require("./ship");
 const GameBoard = {
 	fire: (x, y) => {
 		/** validate GameBoard.fire inputs (x,y) */
-
 		if (
 			typeof x == "undefined" ||
 			typeof y == "undefined" ||
@@ -28,7 +27,6 @@ const GameBoard = {
 
 				if (row === x && col === y) {
 					if (playerOneBoard[row][col] !== "x") {
-						/** HIT */
 						const ship = playerOneBoard[row][col];
 						playerOneBoard[row][col] = "hit";
 						Ship(ship).hit();
@@ -36,6 +34,7 @@ const GameBoard = {
 						if (Ship(ship).sunk()) {
 							return `You sank my ${ship}`;
 						}
+						/** HIT */
 						return `You hit my ${ship}`;
 					}
 					/** MISS */
